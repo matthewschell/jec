@@ -191,24 +191,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Real-time validation function
-        const validateInput = (input) => {
+const validateInput = (input) => {
             const errorSpan = document.getElementById(`${input.id}-error`);
-            let isValid = input.checkValidity();
+            
+            // 1. Reset custom errors before re-checking
+            input.setCustomValidity("");
 
-            // Custom file size validation
-            if (input.type === 'file' && input.files.length > 0) {
-                const file = input.files[0];
-                const maxSize = 5 * 1024 * 1024; // 5MB
-                if (file.size > maxSize) {
-                    isValid = false;
-                    input.setCustomValidity("File must be smaller than 5MB.");
-                } else {
-                    input.setCustomValidity("");
-                    isValid = true;
+            // 2. Strict Email Check (Forces a .com, .ca, etc.)
+            if (input.type === 'email' && input.value !== "") {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value)) {
+                    input.setCustomValidity("Please enter a valid email address (e.g. name@domain.com).");
                 }
             }
 
-            // Update UI based on validity
+            // 3. Strict Phone Check (Must have at least 10 numbers)
+            if (input.type === 'tel' && input.value !== "") {
+                // This strips out all dashes, spaces, and brackets, counting ONLY the numbers
+                const digitCount = input.value.replace(/\D/g, '').length;
+                if (digitCount < 10) {
+                    input.setCustomValidity("Please enter a valid 10-digit phone number.");
+                }
+            }
+
+            // 4. File Size Check
+            if (input.type === 'file' && input.files.length > 0) {
+                if (input.files[0].size > 5 * 1024 * 1024) { // 5MB
+                    input.setCustomValidity("File must be smaller than 5MB.");
+                }
+            }
+
+            // 5. Final check based on the rules above
+            let isValid = input.checkValidity();
+
             if (isValid || (!input.required && input.value === "")) {
                 input.classList.remove('invalid', 'shake');
                 input.classList.add('valid');
@@ -221,23 +236,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.classList.remove('valid');
                 input.classList.add('invalid');
                 
-                // Add shake animation
                 input.classList.remove('shake');
-                void input.offsetWidth; // Trigger reflow
+                void input.offsetWidth; // Trigger reflow for animation
                 input.classList.add('shake');
 
                 if (errorSpan) {
-                    if (input.validity.valueMissing) {
-                        errorSpan.textContent = 'This field is required.';
-                    } else if (input.validity.patternMismatch) {
-                        errorSpan.textContent = 'Please follow the requested format.';
-                    } else if (input.validity.typeMismatch) {
-                        errorSpan.textContent = 'Please enter a valid value.';
-                    } else if (input.validity.tooShort) {
-                        errorSpan.textContent = `Must be at least ${input.getAttribute('minlength')} characters.`;
-                    } else {
-                        errorSpan.textContent = input.validationMessage;
-                    }
+                    // This will now display the exact error messages we set above
+                    errorSpan.textContent = input.validationMessage || 'This field is required.';
                     errorSpan.classList.add('show');
                 }
                 return false;
