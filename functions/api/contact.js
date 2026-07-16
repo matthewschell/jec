@@ -57,7 +57,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Website Lead <website@jecgroup.ca>', 
-        to: ['matthew.schell@gmail.com'], // Remember to update this to the office email for production!
+        to: ['office@jecgroup.ca'], // Remember to update this to the office email for production!
         reply_to: email, 
         
         // DYNAMIC SUBJECT LINE: Guarantees emails won't thread together
@@ -77,7 +77,7 @@ export async function onRequestPost(context) {
               
               <tr>
                 <td style="background-color: #333333; padding: 25px 20px; text-align: center; border-bottom: 5px solid #FBC02D;">
-                  <img src="https://johnstonelectricalcontracting.com/pai/logos/logo.webp" alt="Johnston Electrical Logo" width="60" style="display: block; margin: 0 auto 10px auto;">
+                  <img src="https://johnstonelectricalcontracting.com/pai/logos/logo.png" alt="Johnston Electrical & Contracting Logo" width="60" style="display: block; margin: 0 auto 10px auto;">
                   <h1 style="color: #ffffff; margin: 0; font-size: 20px; letter-spacing: 1px; text-transform: uppercase;">New Quote Request</h1>
                 </td>
               </tr>
