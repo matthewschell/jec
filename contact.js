@@ -57,8 +57,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Website Lead <website@jecgroup.ca>', 
-        to: 'matthew.schell@gmail.com', 
-        bcc: 'speakez512@hotmail.com',
+        to: ['matthew.schell@gmail.com'], 
         reply_to: email, 
         
         // DYNAMIC SUBJECT LINE: Guarantees emails won't thread together
