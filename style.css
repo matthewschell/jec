@@ -1185,12 +1185,12 @@ textarea.honeypot-hidden {
 
 .form-group {
     position: relative;
-    margin-bottom: 3px; /* Compressed for compact fit */
+    margin-bottom: 2px; /* Compressed for compact fit */
 }
 
 .form-group label { 
     display: block; 
-    margin-bottom: 3px; 
+    margin-bottom: 2px; 
     font-weight: 600; 
     font-size: 0.85rem; 
 }
@@ -1219,7 +1219,7 @@ textarea.honeypot-hidden {
     gap: 10px; /* Tighter side-by-side gap */
     margin-bottom: 0px;
 }
-.form-row .form-group { flex: 1; margin-bottom: 5px; }
+.form-row .form-group { flex: 1; margin-bottom: 2px; }
 
 .form-group input:focus,
 .form-group select:focus,
