@@ -1,4 +1,5 @@
-/* components.js */
+/* components.js - Enhanced Validation & Cloudflare Integration */
+/* Production Build - Final V4 */
 
 // ==========================================
 // 1. SHARED HTML COMPONENTS
@@ -7,14 +8,14 @@
 const SHARED_HEADER = `
 <div class="container nav-wrapper">
     <a href="/" class="logo">
-        <img src="pai/logos/logo.webp" alt="JEC Logo">
+        <img src="pai/logos/logo.webp" alt="JEC Logo" width="50" height="50">
         <div class="logo-text-group">
             <span class="logo-name">JOHNSTON</span>
             <span class="logo-tagline">ELECTRICAL & CONTRACTING</span>
         </div>
     </a>
 
-    <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
         <i class="fas fa-bars"></i>
     </button>
 
@@ -31,7 +32,6 @@ const SHARED_HEADER = `
 const SHARED_FOOTER = `
 <div class="container">
     <div class="services-grid footer-grid">
-        
         <div>
             <h4>Johnston Electrical & Contracting</h4>
             <p>
@@ -40,17 +40,14 @@ const SHARED_FOOTER = `
                 <i class="fab fa-canadian-maple-leaf canadian-flag"></i>
                 <br><strong>Serving:</strong> Kawartha Lakes • Woodville • <a href="/lindsay-electrician.html">Lindsay</a> • Little Britain • Cannington • Fenelon Falls • Beaverton • Manilla and Surrounding Areas
             </p>
-            
             <p class="license-text">
                 <strong>ECRA/ESA License # 7015677</strong><br> Fully Insured & WSIB Compliant
             </p>
-
             <div class="footer-logos">
-                <img src="pai/logos/esa-logo.webp" alt="ECRA ESA Licensed Electrical Contractor" class="footer-logo-img logo-white-bg">
-                <img src="pai/logos/baeumler-logo.webp" alt="Baeumler Approved" class="footer-logo-img">
+                <img src="pai/logos/esa-logo.webp" alt="ECRA ESA Licensed Electrical Contractor" class="footer-logo-img logo-white-bg" loading="lazy" width="100" height="50">
+                <img src="pai/logos/baeumler-logo.webp" alt="Baeumler Approved" class="footer-logo-img" loading="lazy" width="100" height="50">
             </div>
         </div>
-
         <div>
             <h4>Quick Links</h4>
             <ul>
@@ -62,23 +59,21 @@ const SHARED_FOOTER = `
                 <li><a href="/#faq">FAQ</a></li>
             </ul>
         </div>
-
         <div>
             <h4>Contact Us</h4>
             <ul>
                 <li><i class="fas fa-phone"></i> <a href="tel:7053447770">Call Us: 705-344-7770</a></li>
-                <li><i class="fas fa-envelope"></i> <a href="mailto:johnstonelectricalcontracting@outlook.com">johnstonelectricalcontracting@outlook.com</a></li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:office@jecgroup.ca">office@jecgroup.ca</a></li>
                 <li><i class="fas fa-map-marker-alt"></i> Kawartha Lakes, ON</li>
             </ul>
         </div>
     </div>
-    
-        <div class="text-center footer-copyright">
+    <div class="text-center footer-copyright">
         <div class="social-links">
-            <a href="https://www.facebook.com/JohnstonEC" target="_blank" aria-label="Facebook">
+            <a href="https://www.facebook.com/JohnstonEC" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/johnstonelectricalcontracting" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/johnstonelectricalcontracting" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
@@ -87,27 +82,23 @@ const SHARED_FOOTER = `
 </div>
 `;
 
-
 // ==========================================
 // 2. INJECTION & NAVIGATION LOGIC
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Inject Header ---
+    // Inject Header & Footer
     const headerEl = document.querySelector('header');
-    if (headerEl) {
-        headerEl.innerHTML = SHARED_HEADER;
-    }
+    if (headerEl) headerEl.innerHTML = SHARED_HEADER;
 
-    // --- Inject Footer ---
     const footerEl = document.querySelector('footer');
     if (footerEl) {
         footerEl.innerHTML = SHARED_FOOTER;
-        footerEl.classList.remove('simple-footer'); // Ensure full footer styles apply
+        footerEl.classList.remove('simple-footer');
     }
 
-    // --- Smart Link Logic (Fix "index.html" prefix) ---
+    // Smart Link Logic
     const path = window.location.pathname;
     const isHomePage = path.endsWith('index.html') || path === '/' || path.endsWith('/');
     
@@ -118,11 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
-    // 3. GLOBAL EVENT LISTENERS
-    // ==========================================
-
-    // --- Mobile Menu Toggle ---
+    // Mobile Menu Toggle
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
@@ -131,59 +118,37 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             const isExpanded = navLinks.classList.contains('active');
             menuBtn.setAttribute('aria-expanded', isExpanded);
+            document.body.style.overflow = isExpanded ? 'hidden' : '';
         });          
      
-        // Close menu when a link is clicked
-        const menuItems = document.querySelectorAll('.nav-links a, .nav-links button');
-        menuItems.forEach(item => {
+        document.querySelectorAll('.nav-links a, .nav-links button').forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 menuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             });
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (navLinks.classList.contains('active')) {
-                const isClickInside = navLinks.contains(event.target);
-                const isClickOnBtn = menuBtn.contains(event.target);
-
-                if (!isClickInside && !isClickOnBtn) {
-                    navLinks.classList.remove('active');
-                    menuBtn.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });  
     }
 
-    // --- Modal Logic (Open/Close) ---
+    // Modal Logic
     const modal = document.getElementById('contactModal');
     const closeBtn = document.querySelector('.close-modal');
     
-    // Smart "Open Modal" Function
     window.openModal = function() { 
-        const modalCheck = document.getElementById('contactModal');
-
-        if (modalCheck) {
-            // YES: We are on the Home Page. Open the box!
-            modalCheck.style.display = 'flex';
+        if (modal) {
+            modal.style.display = 'flex';
         } else {
-            // NO: We are on Thank You / 404. Redirect to Home with the "Secret Signal"
             window.location.href = "/?openquote=true"; 
         }
     };
 
-    // Check for the "Secret Signal" on page load
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('openquote') === 'true') {
+    if (new URLSearchParams(window.location.search).get('openquote') === 'true') {
         setTimeout(() => {
             window.openModal(); 
+            window.history.replaceState(null, null, "/");
         }, 300); 
-        // Clean the URL
-        window.history.replaceState(null, null, "/");
     }
 
-    // Listen for any button with data-action="open-modal"
     document.querySelectorAll('[data-action="open-modal"]').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -191,59 +156,177 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Close Modal Logic ---
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-             const modalCheck = document.getElementById('contactModal');
-             if (modalCheck) modalCheck.style.display = 'none';
-        });
-    }
+    if (closeBtn) closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+    window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal) modal.style.display = 'none'; });
 
-    // Close when clicking outside the modal
-    window.addEventListener('click', (e) => {
-        const modalCheck = document.getElementById('contactModal');
-        if (e.target === modalCheck) {
-            modalCheck.style.display = 'none';
+
+    // ==========================================
+    // 3. FORM VALIDATION & SUBMISSION
+    // ==========================================
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        const inputs = contactForm.querySelectorAll('input, select, textarea');
+        const submitBtn = contactForm.querySelector('#submitBtn');
+        const btnText = contactForm.querySelector('.btn-text');
+        const btnLoader = contactForm.querySelector('.btn-loader');
+        const statusDiv = contactForm.querySelector('#form-status');
+        const charCounter = document.getElementById('message-counter');
+        const messageInput = document.getElementById('message');
+
+        // Character counter for textarea
+        if (messageInput && charCounter) {
+            messageInput.addEventListener('input', function() {
+                const currentLength = this.value.length;
+                const maxLength = this.getAttribute('maxlength');
+                charCounter.textContent = `${currentLength}/${maxLength}`;
+                
+                if (currentLength >= maxLength) {
+                    charCounter.classList.add('danger');
+                } else {
+                    charCounter.classList.remove('danger');
+                }
+            });
         }
-    });
 
-    // --- Dynamic Subject Line (Form) ---
-    const phoneInput = document.getElementById('phone');
-    const subjectInput = document.querySelector('input[name="_subject"]');
-    if (phoneInput && subjectInput) {
-        phoneInput.addEventListener('input', function() {
-            if(this.value.trim() !== "") {
-                subjectInput.value = "New Website Lead: " + this.value; 
+        // Real-time validation function
+        const validateInput = (input) => {
+            const errorSpan = document.getElementById(`${input.id}-error`);
+            let isValid = input.checkValidity();
+
+            // Custom file size validation
+            if (input.type === 'file' && input.files.length > 0) {
+                const file = input.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                if (file.size > maxSize) {
+                    isValid = false;
+                    input.setCustomValidity("File must be smaller than 5MB.");
+                } else {
+                    input.setCustomValidity("");
+                    isValid = true;
+                }
+            }
+
+            // Update UI based on validity
+            if (isValid || (!input.required && input.value === "")) {
+                input.classList.remove('invalid', 'shake');
+                input.classList.add('valid');
+                if (errorSpan) {
+                    errorSpan.textContent = '';
+                    errorSpan.classList.remove('show');
+                }
+                return true;
             } else {
-                subjectInput.value = "New Website Lead!"; 
+                input.classList.remove('valid');
+                input.classList.add('invalid');
+                
+                // Add shake animation
+                input.classList.remove('shake');
+                void input.offsetWidth; // Trigger reflow
+                input.classList.add('shake');
+
+                if (errorSpan) {
+                    if (input.validity.valueMissing) {
+                        errorSpan.textContent = 'This field is required.';
+                    } else if (input.validity.patternMismatch) {
+                        errorSpan.textContent = 'Please follow the requested format.';
+                    } else if (input.validity.typeMismatch) {
+                        errorSpan.textContent = 'Please enter a valid value.';
+                    } else if (input.validity.tooShort) {
+                        errorSpan.textContent = `Must be at least ${input.getAttribute('minlength')} characters.`;
+                    } else {
+                        errorSpan.textContent = input.validationMessage;
+                    }
+                    errorSpan.classList.add('show');
+                }
+                return false;
+            }
+        };
+
+        // Attach validation on blur and input
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => validateInput(input));
+            input.addEventListener('input', () => {
+                if (input.classList.contains('invalid')) validateInput(input);
+            });
+        });
+
+        // Form Submit Handler
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+            
+            // Validate all fields before sending
+            let isFormValid = true;
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            if (!isFormValid) {
+                statusDiv.textContent = "Please correct the errors above before submitting.";
+                statusDiv.style.color = "#dc3545";
+                return;
+            }
+
+            // Verify Turnstile has been completed
+            const formData = new FormData(contactForm);
+            if (!formData.get('cf-turnstile-response')) {
+                statusDiv.textContent = "Please complete the security check.";
+                statusDiv.style.color = "#dc3545";
+                return;
+            }
+
+            // Set UI to loading
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            statusDiv.textContent = "";
+
+            try {
+                // Post to Cloudflare Function
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    window.location.href = '/thank-you.html';
+                } else {
+                    const result = await response.json();
+                    statusDiv.textContent = result.error || "Something went wrong. Please try again.";
+                    statusDiv.style.color = "#dc3545";
+                    
+                    submitBtn.disabled = false;
+                    btnText.style.display = 'inline-block';
+                    btnLoader.style.display = 'none';
+                    
+                    // Reset Turnstile if it fails
+                    if (typeof turnstile !== 'undefined') turnstile.reset();
+                }
+            } catch (error) {
+                statusDiv.textContent = "Network error. Please check your connection and try again.";
+                statusDiv.style.color = "#dc3545";
+                
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline-block';
+                btnLoader.style.display = 'none';
+                
+                if (typeof turnstile !== 'undefined') turnstile.reset();
             }
         });
     }
 
-    // --- Safe Smooth Scroll ---
-    document.addEventListener('click', function(e) {
-        if (e.target.matches('a[href^="#"]')) {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                if (navLinks) navLinks.classList.remove('active');
-            }
-        }
-    });
-
     // ==========================================
-    // 4. HOMEPAGE SPECIFIC LOGIC
+    // 4. CAROUSEL & EXTRAS
     // ==========================================
-
-    // --- Carousel Logic ---
     const track = document.querySelector('.carousel-track');
     if (track) {
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const totalSlides = slides.length;
+        let autoPlayInterval;
 
         window.moveSlide = function(direction) {
             currentSlide += direction;
@@ -252,32 +335,27 @@ document.addEventListener('DOMContentLoaded', () => {
             track.style.transform = `translateX(${-currentSlide * 100}%)`;
         };
         
-        setInterval(() => { window.moveSlide(1); }, 6000);
+        const startAutoPlay = () => { autoPlayInterval = setInterval(() => { window.moveSlide(1); }, 6000); };
+        const stopAutoPlay = () => { if (autoPlayInterval) clearInterval(autoPlayInterval); };
         
-        document.querySelector('.prev-btn')?.addEventListener('click', () => window.moveSlide(-1));
-        document.querySelector('.next-btn')?.addEventListener('click', () => window.moveSlide(1));
+        startAutoPlay();
+        
+        document.querySelector('.prev-btn')?.addEventListener('click', () => { window.moveSlide(-1); stopAutoPlay(); startAutoPlay(); });
+        document.querySelector('.next-btn')?.addEventListener('click', () => { window.moveSlide(1); stopAutoPlay(); startAutoPlay(); });
+        track.parentElement.addEventListener('mouseenter', stopAutoPlay);
+        track.parentElement.addEventListener('mouseleave', startAutoPlay);
     }
 
-    // --- Awards Accordion ---
-    window.toggleAward = function(headerElement) {
-        const card = headerElement.parentElement;
-        card.classList.toggle('closed-year');
-    };
-
-    // --- Tooltip Logic ---
+    window.toggleAward = function(headerElement) { headerElement.parentElement.classList.toggle('closed-year'); };
     window.toggleTooltip = function(event) {
         if (event.target.classList.contains('tooltip-close')) return;
-        const tooltip = document.getElementById('baeumlerTooltip');
-        if (tooltip) tooltip.classList.toggle('tooltip-visible');
+        document.getElementById('baeumlerTooltip')?.classList.toggle('tooltip-visible');
     };
-
     window.closeTooltip = function(event) {
         event.stopPropagation();
-        const tooltip = document.getElementById('baeumlerTooltip');
-        if (tooltip) tooltip.classList.remove('tooltip-visible');
+        document.getElementById('baeumlerTooltip')?.classList.remove('tooltip-visible');
     };
 
-    // --- Lightbox Logic ---
     const lightbox = document.getElementById('lightboxModal');
     const lightboxImg = document.getElementById('lightboxImage');
 
@@ -285,25 +363,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightbox && lightboxImg) {
             lightbox.style.display = 'flex';
             lightboxImg.src = src;
+            document.body.style.overflow = 'hidden';
         }
     };
-
     window.closeLightbox = function(event) {
         if (event.target.id === 'lightboxModal' || event.target.classList.contains('close-modal')) {
-            if (lightbox) lightbox.style.display = 'none';
+            if (lightbox) { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
         }
     };
-
-}); 
-
-// ==========================================
-// 5. SERVICE WORKER CLEANUP (Kill the Zombie)
-// ==========================================
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(let registration of registrations) {
-            registration.unregister();
-            console.log("Zombie Service Worker Unregistered - Cache Cleared");
-        } 
-    });
-}
+});

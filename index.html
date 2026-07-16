@@ -2,16 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; frame-src 'self' https://challenges.cloudflare.com https://*.google.com https://*.googleusercontent.com; base-uri 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
     <meta property="og:title" content="Johnston Electrical & Contracting | Kawartha Lakes">
     <meta property="og:description" content="Voted Kawartha's Best Electrician & General Contractor. Baeumler Approved. Serving Lindsay, Woodville, and surrounding areas. Get a free quote today.">
     <meta property="og:image" content="https://johnstonelectricalcontracting.com/pai/team.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://johnstonelectricalcontracting.com/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:site_name" content="Johnston Electrical & Contracting">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Johnston Electrical & Contracting | Kawartha Lakes">
+    <meta name="twitter:description" content="Award-winning electrician serving Kawartha Lakes. Baeumler Approved. Call 705-344-7770.">
+    <meta name="twitter:image" content="https://johnstonelectricalcontracting.com/pai/team.webp">
+
+    <meta name="theme-color" content="#333">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Johnston Electrical">
     
-    <title>Electrician & General Contractor in Kawartha Lakes | Johnston Electrical</title>
+    <title>Award Winning Electrician & General Contractor in Kawartha Lakes | Johnston Electrical</title>
     <link rel="canonical" href="https://johnstonelectricalcontracting.com/">
+    
+    <meta name="description" content="Top-rated Electrician & General Contractor in Kawartha Lakes. Specializing in panel upgrades, renovations & rural power. Baeumler Approved. Call 705-344-7770.">
+    
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Johnston Electrical & Contracting">
+    <meta name="geo.region" content="CA-ON">
+    <meta name="geo.placename" content="Kawartha Lakes">
     
     <link rel="apple-touch-icon" sizes="180x180" href="pai/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="pai/favicon/favicon-32x32.png">
@@ -19,13 +45,22 @@
     <link rel="manifest" href="pai/favicon/site.webmanifest">
     <link rel="shortcut icon" href="pai/favicon/favicon.ico">
 
-    <meta name="description" content="Family-owned Electrician and General Contractor serving Kawartha Lakes (Lindsay, Woodville, Cannington). Baeumler Approved. Call 705-344-7770.">
-    
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="preload" href="./style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" as="style">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </noscript>
+
+    <link rel="stylesheet" href="./style.css">
 
     <script type="application/ld+json">
     {
@@ -34,6 +69,7 @@
         {
           "@type": ["Electrician", "GeneralContractor"],
           "name": "Johnston Electrical & Contracting",
+          "@id": "https://johnstonelectricalcontracting.com/#organization",
           "image": "https://johnstonelectricalcontracting.com/pai/logos/logo.webp",
           "telephone": "+1-705-344-7770",
           "url": "https://johnstonelectricalcontracting.com",
@@ -51,76 +87,34 @@
             { "@type": "City", "name": "Little Britain" },
             { "@type": "City", "name": "Cannington" },
             { "@type": "City", "name": "Fenelon Falls" }
-          ],
-          "sameAs": [
-            "https://www.facebook.com/people/Johnston-Electrical-Contracting/100086603058003/"
           ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [{
-            "@type": "Question",
-            "name": "Are you fully licenced and insured?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. We are a fully licenced electrical contractor (ECRA/ESA) and carry liability insurance and WSIB coverage. We are also proud to be Baeumler Approved, which requires strict vetting of our insurance and professional history."
-            }
-          }, {
-            "@type": "Question",
-            "name": "Do you provide services in Lindsay and Fenelon Falls?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. While we are based in Woodville, we proudly serve the entire Kawartha Lakes region, including Lindsay, Little Britain, Cannington, Beaverton, Fenelon Falls, and Manilla."
-            }
-          }, {
-            "@type": "Question",
-            "name": "Do you handle permits for construction projects?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. Whether we are building a deck, finishing a basement, or upgrading your electrical panel, we handle the entire permit process with the municipality and the Electrical Safety Authority (ESA) to ensure your project is 100% compliant."
-            }
-          }, {
-            "@type": "Question",
-            "name": "Do I need to upgrade my electrical panel to 200 Amp?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "If you are adding a hot tub, EV charger, or finishing a basement, you may need more power. We can assess your current 60 or 100 Amp service and recommend a safe, future-proof upgrade if necessary."
-            }
-          }, {
-            "@type": "Question",
-            "name": "Do you provide free estimates?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! We provide transparent, detailed quotes for all projects. Simply click the 'Get a Quote' button below or give us a call to schedule a site visit."
-            }
-          }]
         }
       ]
     }
     </script>
-    
-    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-
     <header></header>
 
     <section id="home" class="hero">
+        <div class="hero-background">
+            <picture>
+                <source media="(max-width: 768px)" srcset="./pai/hero-mobile.webp">
+                <img src="./pai/hero-desktop.webp" alt="Electrician working on panel in Kawartha Lakes" class="hero-img" width="1920" height="1080" fetchpriority="high">
+            </picture>
+        </div>
+
         <div class="hero-content">
+            <div class="hero-tagline-large">Powered by Experience.<br>Wired for Success.</div>
+            <h1>Award Winning <strong>Electrician</strong> & <strong>General Contractor</strong> serving <strong>Kawartha Lakes</strong>, Lindsay, and Woodville.</h1>
             
-            <h1>Powered by Experience.<br>Wired for Success.
-               <span class="h1-subline">
-                   Your trusted <strong>Family Owned & Operated</strong> partner for Electrical, General Contracting, & Construction in the <strong>Kawartha Lakes</strong> and surrounding areas.
-               </span>
-            </h1>
-            
-            <div class="baeumler-badge-container" onclick="toggleTooltip(event)" tabindex="0" onkeydown="if(event.key === 'Enter') toggleTooltip(event)">
+            <div class="baeumler-badge-container" onclick="toggleTooltip(event)" tabindex="0" onkeydown="if(event.key === 'Enter') toggleTooltip(event)" role="button" aria-label="Why choose Baeumler Approved?">
                 <span class="baeumler-badge">
                     <i class="fas fa-check-circle"></i> Baeumler Approved <i class="fas fa-info-circle badge-info-icon"></i>
                 </span>
-                <div class="tooltip-text" id="baeumlerTooltip">
-                    <button class="tooltip-close" onclick="closeTooltip(event)" aria-label="Close tooltip">&times;</button>
+                <div class="tooltip-text" id="baeumlerTooltip" role="tooltip">
+                    <button class="tooltip-close" onclick="closeTooltip(event)" aria-label="Close tooltip">×</button>
                     <strong>What does Baeumler Approved mean?</strong><br>
                     It means we have been vetted for quality! We have verified insurance coverage, Worker's Compensation (WSIB), and professional certifications. You can trust us to do the job right.
                 </div>
@@ -130,7 +124,6 @@
                 <a href="#services" class="btn btn-primary">Our Services</a>
                 <a href="#projects" class="btn btn-secondary">View Gallery</a>
             </div>
-
         </div>
     </section>
 
@@ -140,9 +133,7 @@
                 <h2>Our Expertise</h2>
                 <p>Professional services across Lindsay, Little Britain, Woodville, Cannington, and surrounding areas.</p>
             </div>
-            
             <div class="services-grid">
-                
                 <div class="service-card" id="electrical">
                     <div class="service-icon"><i class="fas fa-plug"></i></div>
                     <h3>Electrical Services</h3>
@@ -153,10 +144,8 @@
                         <li><strong>EV Chargers:</strong> Level 2 charger installation for electric vehicles.</li>
                         <li><strong>Hot Tubs & Spas:</strong> Safe wiring and disconnects for your backyard oasis.</li>
                         <li><strong>Rewiring & Renovations:</strong> Knob & tube removal and kitchen/bath rewiring.</li>
-                        <li>And more...</li>
                     </ul>
                 </div>
-
                 <div class="service-card" id="contracting">
                     <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
                     <h3>General Contracting</h3>
@@ -167,10 +156,8 @@
                         <li><strong>Interior Finishing:</strong> Custom trim, baseboards, crown moulding, and doors.</li>
                         <li><strong>Windows & Doors:</strong> Energy-efficient upgrades and replacements.</li>
                         <li><strong>Accessibility:</strong> Modifications for safer, more accessible living spaces.</li>
-                        <li>And more...</li>
                     </ul>
                 </div>
-
                 <div class="service-card" id="construction">
                     <div class="service-icon"><i class="fas fa-hammer"></i></div>
                     <h3>Construction</h3>
@@ -181,10 +168,22 @@
                         <li><strong>Garages & Sheds:</strong> Building detached structures and workshops from the ground up.</li>
                         <li><strong>Siding & Exterior:</strong> Vinyl, wood, or composite siding to protect your home.</li>
                         <li><strong>Site Preparation:</strong> Trenching and grading for new builds and additions.</li>
-                       <li>And more...</li>
                      </ul>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="section-padding bg-light">
+        <div class="container text-center">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Licensed Electrician Serving Kawartha Lakes</h2>
+                <p style="margin-top: 20px; font-size: 1.1rem; color: #555;">
+                    Finding a reliable <strong>electrician in Kawartha Lakes</strong> shouldn't be hard. 
+                    Whether you need a residential electrician for a custom home build, an 
+                    EV charger installation, or emergency service, our family-owned team is 
+                    positioned in Woodville to respond quickly. 
+                </p>
             </div>
         </div>
     </section>
@@ -194,395 +193,25 @@
             <h2>Our Recent Projects</h2>
             <p>Quality workmanship across the Kawartha Lakes. (Click image to expand)</p>
 
-            <div class="carousel-wrapper">
-                <button class="carousel-btn prev-btn" aria-label="Previous slide">&#10094;</button>
-             <div class="carousel-track">
-    
-    <div class="carousel-slide">
-        <img src="./pai/projects/custom-tile-backsplash-kawartha.webp" 
-             alt="Custom subway tile backsplash installation in Kawartha Lakes" 
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Custom Tiling & Finishing</h3>
-            <p>Precision backsplash installation and interior upgrades.</p>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="./pai/projects/custom-cabinet-lighting-lindsay.webp" 
-             alt="Custom cabinet interior lighting and backsplash LED" 
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Custom Lighting Design</h3>
-            <p>Showcase lighting for cabinetry and bars.</p>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="./pai/projects/modern-bathroom-remodel-woodville.webp" 
-             alt="Modern bathroom renovation with LED mirror and glass shower" 
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Luxury Bathrooms</h3>
-            <p>Modern electrical fixtures and custom tiling.</p>
-        </div>
-    </div>
-    
-    <div class="carousel-slide">
-        <img src="./pai/projects/outdoor-lighting-beaverton.webp" 
-             alt="Custom exterior soffit or LED lighting" 
-             loading="lazy"
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Exterior Lighting Solutions</h3>
-            <p>Custom exterior soffit or LED lighting solutions</p>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="./pai/projects/generators-installed-port-perry.webp" 
-             alt="Rural GenerLink installation in Kawartha Lakes" 
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Generator Installation</h3>
-            <p>Complete generator install, including trenching of cables.</p>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="./pai/projects/custom-deck-construction-fenelon-falls.webp" 
-             alt="Custom timber deck construction" 
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Decks & Construction</h3>
-            <p>Custom exterior carpentry and outdoor living spaces.</p>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="./pai/projects/custom-wall-paneling-woodville.webp" 
-             alt="Custom wainscoting and wall paneling in Woodville" 
-             loading="lazy"
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Interior Finishing</h3>
-            <p>Custom wainscoting, trim, and wall features.</p>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="./pai/projects/open-concept-renovation-cannington.webp" 
-             alt="Full open concept renovation with flooring and pot lights" 
-             loading="lazy"
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>Full Renovations</h3>
-            <p>Flooring, led pot lighting, and open-concept transformations.</p>
-        </div>
-    </div>
-           
-    <div class="carousel-slide">
-        <img src="./pai/projects/panel-60A-200A-upgrade-peterborough.webp" 
-             alt="Clean and professional 200A panel upgrades" 
-             loading="lazy"
-             width="800" height="600" 
-             onclick="openLightbox(this.src)">
-        <div class="carousel-caption">
-            <h3>200A Panel Upgrades</h3>
-            <p>Upgrade your panel & make sure your system can handle today's electric world  </p>
-        </div>
-    </div>
-
-</div>
-
-
-                <button class="carousel-btn next-btn" aria-label="Next slide">&#10095;</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding trust-section">
-        <div class="container trust-grid">
-            <div class="trust-content">
-                <h2>Our Family Commitment</h2>
-                <p>As a <strong>family owned and operated business</strong>, we treat every home we work on as if it were our own. We understand that hiring a contractor requires trust, which is why we prioritize transparent communication, safety, and reliability.</p>
-                <p>Whether you need a simple outlet fix in Little Britain or a full home renovation in Lindsay, our family is here to serve yours.</p>
-                <br>
-                <ul class="trust-list">
-                    <li><i class="fas fa-check-circle"></i> <strong>Baeumler Approved:</strong> Vetted for quality, insurance, and safety.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>ESA Licensed:</strong> Fully licensed Electrical Contractors (ECRA/ESA).</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Community Focused:</strong> Proudly serving our neighbours in the Kawarthas.</li>
-                </ul>
-                <br>
-                <button onclick="openModal()" class="btn btn-primary">Contact Us Today</button>
-            </div>
-            <div class="trust-img">
-                <img src="./pai/team.webp" alt="Matt and Caitlin Johnston - Owners of Johnston Electrical in Woodville" loading="lazy" width="600" height="400">
-            </div>
-        </div>
-    </section>
-    
-    <section id="awards" class="section-padding bg-light">
-        <div class="container">
-            
-            <div class="awards-split-layout">
-                
-                <div class="awards-intro-side">
-                    <h4 class="community-subtitle">Award Winning Service</h4>
-                    <h2>Voted Kawartha’s Best</h2>
-                    <p>14 Awards. 4 Years Running.<br>Thank you for making us your #1 choice.</p>
-                    <i class="fas fa-trophy intro-big-icon"></i>
-                </div>
-
-                <div class="awards-grid-badges">
-                    
-                    <div class="badge-card">
-                        <div class="badge-header" onclick="toggleAward(this)">
-                            <div class="header-content">
-                                <span>2025</span> 
-                                <i class="fas fa-trophy header-trophy"></i>
-                                <span class="award-count">6 Awards</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="badge-container">
-                            <div class="award-list-item">
-                                <i class="fas fa-trophy"></i>
-                                <div class="award-details">
-                                    <span class="award-cat">Electrician</span>
-                                    <span class="award-rank">PLATINUM</span>
-                                </div>
-                            </div>
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Lighting</span><span class="award-rank">PLATINUM</span></div></div>
-                             <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Residential Const.</span><span class="award-rank">PLATINUM</span></div></div>
-                             <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">General Contractor</span><span class="award-rank">GOLD</span></div></div>
-                             <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Home Reno</span><span class="award-rank">GOLD</span></div></div>
-                             <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Bathroom Specialist</span><span class="award-rank">GOLD</span></div></div>
+            <div class="carousel-wrapper" role="region" aria-label="Project gallery carousel">
+                <button class="carousel-btn prev-btn" aria-label="Previous project">&#10094;</button>
+                <div class="carousel-track" role="list">
+                    <div class="carousel-slide" role="listitem" aria-label="Project 1 of 9">
+                        <img src="./pai/projects/custom-tile-backsplash-kawartha.webp" alt="Custom subway tile backsplash installation in Kawartha Lakes" width="800" height="600" onclick="openLightbox(this.src)">
+                        <div class="carousel-caption">
+                            <h3>Custom Tiling & Finishing</h3>
+                            <p>Precision backsplash installation and interior upgrades.</p>
                         </div>
                     </div>
-
-                    <div class="badge-card closed-year">
-                        <div class="badge-header" onclick="toggleAward(this)">
-                            <div class="header-content">
-                                <span>2024</span> 
-                                <i class="fas fa-trophy header-trophy"></i>
-                                <span class="award-count">4 Awards</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="badge-container">
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">General Contractor</span><span class="award-rank">PLATINUM</span></div></div>
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Lighting</span><span class="award-rank">PLATINUM</span></div></div>
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Home Reno</span><span class="award-rank">GOLD</span></div></div>
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Electrician</span><span class="award-rank">SILVER</span></div></div>
-                        </div>
-                    </div>
-
-                    <div class="badge-card closed-year">
-                        <div class="badge-header" onclick="toggleAward(this)">
-                            <div class="header-content">
-                                <span>2023</span> 
-                                <i class="fas fa-trophy header-trophy"></i>
-                                <span class="award-count">2 Awards</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="badge-container">
-                             <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Electrician</span><span class="award-rank">PLATINUM</span></div></div>
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Lighting</span><span class="award-rank">PLATINUM</span></div></div>
-                        </div>
-                    </div>
-
-                    <div class="badge-card closed-year">
-                        <div class="badge-header" onclick="toggleAward(this)">
-                            <div class="header-content">
-                                <span>2022</span> 
-                                <i class="fas fa-trophy header-trophy"></i>
-                                <span class="award-count">2 Awards</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="badge-container">
-                             <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Electrician</span><span class="award-rank">PLATINUM</span></div></div>
-                            <div class="award-list-item"><i class="fas fa-trophy"></i><div class="award-details"><span class="award-cat">Lighting</span><span class="award-rank">PLATINUM</span></div></div>
-                        </div>
-                    </div>
-
-                </div> 
-            </div> 
-        </div>
-    </section>
-
-    <section id="reviews" class="section-padding bg-white">
-        <div class="container text-center">
-            <h2>What Our Clients Say</h2>
-            <p class="mobile-swipe-text">(Swipe to see more)</p>
-
-            <div class="services-grid reviews-wrapper">
-                
-                <div class="service-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p>"Amazing experience. Courteous, punctual, great value. Hung my heater in the garage, no mess, very clean install of the panel."</p>
-                    <h5 class="review-author">- R.C.</h5>
                 </div>
-
-                <div class="service-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p>"JEC is knowledgeable, friendly, completes the project efficiently and the quality in the work is hands down the best."</p>
-                    <h5 class="review-author">- V.M.</h5>
-                </div>
-
-                <div class="service-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p>"Matt and his team exceeded our expectations. Response time, communication, and willingness to help is above and beyond."</p>
-                    <h5 class="review-author">- Savage Carpentry</h5>
-                </div>
-
-                <div class="service-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p>"Professional from start to finish. They rewired our kitchen renovation and suggested lighting options we hadn't even considered."</p>
-                    <h5 class="review-author">- Sarah L.</h5>
-                </div>
-
-                <div class="service-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p>"Highly recommend. The trenching for our new shop power was neat and tidy. Great communication throughout the process."</p>
-                    <h5 class="review-author">- Dave M.</h5>
-                </div>
-               
-               <div class="service-card">
-                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p>"We are a townhouse corporation... we had Matt Johnston and his team come in to replace 18 external electrical outlets... Couldn't be more impressed."</p>
-                    <h5 class="review-author">- Terri</h5>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    
-    <section id="community" class="section-padding bg-light">
-        <div class="container">
-            <div class="community-row">
-                
-                <div class="col-flex community-text">
-                    <h4 class="community-subtitle">Giving Back</h4>
-                    <h2>Community Impact</h2>
-                    <p>At Johnston Electrical & Contracting, we don't just work in <strong>Kawartha Lakes</strong>—we live here too. We are proud to organize local initiatives that make a difference.</p>
-                    
-                    <div class="community-highlight highlight-box">
-                        <h3 class="highlight-title"> 
-                            <i class="fas fa-trash-alt highlight-icon"></i> Annual Community Clean Up
-                        </h3>
-                        <p class="highlight-text">We successfully hosted our <strong>First Annual JEC Community Clean Up Day</strong> last year! It was an incredible day bringing neighbours together to clear litter and keep our local parks and streets beautiful.</p>
-                        <a href="https://www.facebook.com/share/p/1DF4X1BHmC/" target="_blank" class="highlight-link">View Event Photos on Facebook &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="col-flex text-center">
-                    <div class="community-card">
-                        <i class="fas fa-hands-helping community-icon"></i>
-                        <h3 class="text-white">Locally Owned.<br>Community Driven.</h3>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="section-padding bg-white">
-        <div class="container">
-            <div class="text-center section-intro">
-                <h2>Frequently Asked Questions</h2>
-                <p>Answers to common questions about our Electrical & Construction services.</p>
-            </div>
-
-            <div class="faq-wrapper">
-                
-                <div class="faq-column">
-                    <div class="faq-item">
-                        <details>
-                            <summary>Are you fully licenced and insured?</summary>
-                            <div class="faq-answer">
-                                Yes. We are a fully licenced electrical contractor (ECRA/ESA) and carry liability insurance and WSIB coverage. We are also proud to be <strong>Baeumler Approved</strong>, which requires strict vetting of our insurance and professional history.
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Do you provide services in Lindsay and Fenelon Falls?</summary>
-                            <div class="faq-answer">
-                                Yes. While we are based in Woodville, we proudly serve the entire <strong>Kawartha Lakes</strong> region, including Lindsay, Little Britain, Cannington, Beaverton, Fenelon Falls, and Manilla.
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Do you handle permits for construction projects?</summary>
-                            <div class="faq-answer">
-                                Absolutely. Whether we are building a deck, finishing a basement, or upgrading your electrical panel, we handle the entire permit process with the municipality and the Electrical Safety Authority (ESA) to ensure your project is 100% compliant.
-                            </div>
-                        </details>
-                    </div>
-                </div> 
-
-                <div class="faq-column">
-                    <div class="faq-item">
-                        <details>
-                            <summary>Do I need to upgrade my electrical panel to 200 Amp?</summary>
-                            <div class="faq-answer">
-                                If you are adding a hot tub, EV charger, or finishing a basement, you may need more power. We can assess your current 60 or 100 Amp service and recommend a safe, future-proof upgrade if necessary.
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item">
-                        <details>
-                            <summary>Do you provide free estimates?</summary>
-                            <div class="faq-answer">
-                                Yes! We provide transparent, detailed quotes for all projects. Simply click the "Get a Quote" button below or give us a call to schedule a site visit.
-                            </div>
-                        </details>
-                    </div>
-
-                    <div class="faq-item faq-cta">
-                        <div class="faq-cta-content">
-                            <h3 class="faq-cta-title">Still have questions?</h3>
-                            <p class="faq-cta-text">We are here to help with your project.</p>
-                            <button onclick="openModal()" class="btn btn-primary btn-full">Ask Us Directly</button>
-                        </div>
-                    </div>
-                </div> 
-
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding bg-white" style="padding: 40px 0;"> 
-        <div class="container">
-            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #333;">Proudly Serving Kawartha Lakes</h3>
-                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
-                    We are based in <strong>Woodville</strong> and regularly complete electrical and renovation projects throughout 
-                    <strong>Lindsay</strong>, <strong>Fenelon Falls</strong>, <strong>Little Britain</strong>, <strong>Cannington</strong>, 
-                    <strong>Beaverton</strong>, <strong>Manilla</strong>, <strong>Sunderland</strong>, and the surrounding farm and cottage country.
-                </p>
+                <button class="carousel-btn next-btn" aria-label="Next project">&#10095;</button>
             </div>
         </div>
     </section>
 
     <footer id="contact"></footer>
 
-    <div class="mobile-sticky-cta">
+    <div class="mobile-sticky-cta" style="padding-bottom: env(safe-area-inset-bottom, 0);">
         <a href="tel:7053447770" class="cta-call">
             <i class="fas fa-phone-alt"></i> Call Now
         </a>
@@ -597,65 +226,79 @@
             <h2 class="modal-title">Request a Free Quote</h2>
             <p class="modal-subtitle">Fill out the form below and we will get back to you shortly.</p>
             
-          <form action="https://formsubmit.co/johnstonelectricalcontracting@outlook.com" method="POST" enctype="multipart/form-data">
-    
-            <input type="text" name="_honey" class="hidden-field">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://johnstonelectricalcontracting.com/thank-you.html">
-            <input type="hidden" name="_subject" value="New Website Lead!">
-            <input type="hidden" name="_template" value="table">
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Name*</label>
-                    <input type="text" id="name" name="name" required minlength="2" placeholder="Your Name">
+            <form id="contactForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="100" placeholder="Your Name" autocomplete="name">
+                        <span class="error-message" id="name-error"></span>
+                        <span class="success-indicator"><i class="fas fa-check-circle"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" required pattern="^(\+?1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$" placeholder="705-XXX-XXXX" autocomplete="tel">
+                        <span class="error-message" id="phone-error"></span>
+                        <span class="success-indicator"><i class="fas fa-check-circle"></i></span>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone*</label>
-                    <input type="tel" id="phone" name="phone" required 
-                           pattern="[\d\s\-\(\)]{10,}" 
-                           title="Valid phone number"
-                           placeholder="705-XXX-XXXX">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required maxlength="100" autocomplete="email">
+                    <span class="error-message" id="email-error"></span>
+                    <span class="success-indicator"><i class="fas fa-check-circle"></i></span>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address*</label>
-                <input type="email" id="email" name="email" placeholder="name@example.com" required>
-            </div>
 
-            <div class="form-row">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">City*</label>
+                        <input type="text" id="location" name="location" placeholder="e.g. Woodville" required maxlength="50" autocomplete="address-level2">
+                        <span class="error-message" id="location-error"></span>
+                        <span class="success-indicator"><i class="fas fa-check-circle"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service*</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Contracting">General Contracting</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error-message" id="service-error"></span>
+                        <span class="success-indicator"><i class="fas fa-check-circle"></i></span>
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label for="location">City*</label>
-                    <input type="text" id="location" name="location" placeholder="e.g. Woodville" required>
+                    <label for="attachment" class="file-label">
+                        Upload Photo <span class="optional-text">(Optional)</span>
+                    </label>
+                    <input type="file" id="attachment" name="attachment" accept="image/png, image/jpeg, image/webp, image/jpg">
+                    <small id="file-help" class="form-help-text">Max 5MB. Formats: JPG, PNG, WebP</small>
+                    <span class="error-message" id="file-error"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="service">Service</label>
-                    <select id="service" name="service">
-                        <option value="Electrical">Electrical</option>
-                        <option value="Contracting">General Contracting</option>
-                        <option value="Construction">Construction</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <label for="message">Message*</label>
+                    <textarea id="message" name="message" required minlength="10" maxlength="1000" rows="3" placeholder="Describe your project..."></textarea>
+                    <div class="textarea-footer">
+                        <span class="error-message" id="message-error"></span>
+                        <span class="character-counter" id="message-counter">0/1000</span>
+                    </div>
                 </div>
-            </div>
 
-                        <div class="form-group">
-                <label for="attachment" class="file-label">
-                    Upload Photo <span class="optional-text">(Optional)</span>
-                </label>
-                <input type="file" id="attachment" name="attachment" accept="image/png, image/jpeg, image/webp">
-            </div>
+                <!-- Turnstile Widget -->
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAD3P3lCkucCia6ef" data-appearance="interaction-only"></div>
+                <div id="form-status" style="margin-bottom: 15px; text-align: center; font-weight: bold; font-size: 0.9rem;"></div>
 
-
-            <div class="form-group">
-                <label for="message">Message*</label>
-                <textarea id="message" name="message" required minlength="10" rows="3" placeholder="Describe your project..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full">Send Request</button>
-        </form>
+                <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                    <span class="btn-text">Send Request</span>
+                    <span class="btn-loader" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
+                </button>
+            </form>
         </div>
     </div>
 
@@ -664,7 +307,8 @@
         <img class="lightbox-content" id="lightboxImage" alt="Expanded project view">
     </div>
 
-    <script src="./components.js?v=2"></script>
-
+    <!-- Required Cloudflare Turnstile Script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="./components.js"></script>
 </body>
 </html>

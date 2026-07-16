@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+   
+   <!-- Homepage - Highest Priority -->
+   <url>
+      <loc>https://johnstonelectricalcontracting.com/</loc>
+      <lastmod>2026-01-25</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+      <image:image>
+         <image:loc>https://johnstonelectricalcontracting.com/pai/team.webp</image:loc>
+         <image:title>Johnston Electrical Team</image:title>
+      </image:image>
+   </url>
+
+   <!-- Location-Specific Service Pages - High Priority -->
+   <url>
+      <loc>https://johnstonelectricalcontracting.com/lindsay-electrician.html</loc>
+      <lastmod>2026-01-25</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+      <image:image>
+         <image:loc>https://johnstonelectricalcontracting.com/pai/projects/panel-60A-200A-upgrade-peterborough.webp</image:loc>
+         <image:title>Electrical Panel Upgrade Lindsay</image:title>
+      </image:image>
+   </url>
+
+  
+
+   <!-- Legal/Informational Pages - Low Priority -->
+   <url>
+      <loc>https://johnstonelectricalcontracting.com/privacy-policy.html</loc>
+      <lastmod>2026-01-08</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+
+   <!-- Thank You Page - Very Low Priority (No Index Recommended) -->
+   <url>
+      <loc>https://johnstonelectricalcontracting.com/thank-you.html</loc>
+      <lastmod>2026-01-08</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.1</priority>
+   </url>
+
+   <!-- Note: 404.html should NOT be in sitemap as it's an error page -->
+
+</urlset>
