@@ -236,7 +236,7 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone*</label>
-                        <input type="tel" id="phone" name="phone" required pattern="^(\+?1[-.\s]?)?\(?[2-9]\d{2}\)?[-.\s]?\d{3}[-.\s]?\d{4}$" placeholder="705-XXX-XXXX" autocomplete="tel">
+                        <input type="tel" id="phone" name="phone" required pattern="(?:\+?1[-. ]?)?\(?[2-9][0-9]{2}\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}" placeholder="705-XXX-XXXX">
                         <span class="error-message" id="phone-error"></span>
                         <span class="success-indicator"><i class="fas fa-check-circle"></i></span>
                     </div>
