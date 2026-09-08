@@ -89,7 +89,7 @@
           "areaServed": [
             { "@type": "City", "name": "Kawartha Lakes" },
             { "@type": "City", "name": "Lindsay" },
-            { "@type": "Woodville", "name": "Woodville" },
+            { "@type": "City", "name": "Woodville" },
             { "@type": "City", "name": "Little Britain" },
             { "@type": "City", "name": "Cannington" },
             { "@type": "City", "name": "Fenelon Falls" }
@@ -134,7 +134,7 @@
                     <i class="fas fa-check-circle"></i> Baeumler Approved <i class="fas fa-info-circle badge-info-icon"></i>
                 </span>
                 <div class="tooltip-text" id="baeumlerTooltip" role="tooltip">
-                    <button class="tooltip-close" onclick="closeTooltip(event)" aria-label="Close tooltip">&times;</button>
+                    <button class="tooltip-close" onclick="closeTooltip(event)" aria-label="Close tooltip">×</button>
                     <strong>What does Baeumler Approved mean?</strong><br>
                     It means we have been vetted for quality! We have verified insurance coverage, Worker's Compensation (WSIB), and professional certifications. You can trust us to do the job right.
                 </div>
@@ -146,6 +146,27 @@
             </div>
         </div>
     </section>
+
+    <aside class="awards-callout-banner" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); color: #fff; border-top: 2px solid #374151; border-bottom: 4px solid var(--primary-color); padding: 16px 0; text-align: center;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px;">
+            <div style="display: inline-flex; align-items: center; gap: 12px; text-align: left;">
+                <div style="background: var(--primary-color); color: #222; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; box-shadow: 0 0 14px rgba(251, 192, 45, 0.45);">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div>
+                    <div style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 800; color: #fff; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1.2;">
+                        THANK YOU KAWARTHA LAKES! VOTED #1 AGAIN FOR 2026
+                    </div>
+                    <div style="font-size: 0.88rem; color: #d1d5db; margin-top: 3px;">
+                        6 New Platinum & Gold Wins Just Announced • <strong style="color: var(--primary-color);">20 Awards Over 5 Consecutive Years</strong>
+                    </div>
+                </div>
+            </div>
+            <a href="#awards" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.85rem; border-radius: 50px; font-weight: 700; white-space: nowrap;">
+                See All 20 Awards &darr;
+            </a>
+        </div>
+    </aside>
 
     <section id="services" class="section-padding">
         <div class="container">
@@ -203,7 +224,7 @@
             <p>Quality workmanship across the Kawartha Lakes. (Click image to expand)</p>
 
             <div class="carousel-wrapper" role="region" aria-label="Project gallery carousel">
-                <button class="carousel-btn prev-btn" aria-label="Previous slide">&#10094;</button>
+                <button class="carousel-btn prev-btn" aria-label="Previous slide">❮</button>
                 <div class="carousel-track">
                     
                     <div class="carousel-slide">
@@ -279,7 +300,7 @@
                     </div>
 
                 </div>
-                <button class="carousel-btn next-btn" aria-label="Next slide">&#10095;</button>
+                <button class="carousel-btn next-btn" aria-label="Next slide">❯</button>
             </div>
         </div>
     </section>
@@ -312,6 +333,14 @@
                     <p class="community-subtitle">Award Winning Service</p>
                     <h2>Voted Kawartha’s Best</h2>
                     <p>20 Awards. 5 Years Running.<br>Thank you for making us your #1 choice.</p>
+                    
+                    <div style="background: #fff; border-left: 4px solid var(--primary-color); padding: 15px; border-radius: 0 8px 8px 0; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.04);">
+                        <p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #333; line-height: 1.5;">
+                            "To our neighbours and clients across Kawartha Lakes: thank you so much for trusting us with your homes and voting us your top choice year after year!"
+                        </p>
+                        <span style="display: block; margin-top: 8px; font-size: 0.85rem; color: #777; font-weight: 700;">— Matt, Caitlin & the JEC Team</span>
+                    </div>
+
                     <i class="fas fa-trophy intro-big-icon"></i>
                 </div>
                 <div class="awards-grid-badges">
@@ -420,7 +449,7 @@
                             <i class="fas fa-trash-alt highlight-icon"></i> Annual Community Clean Up
                         </h3>
                         <p class="highlight-text">We successfully hosted our <strong>First Annual JEC Community Clean Up Day</strong> last year! It was an incredible day bringing neighbours together to clear litter and keep our local parks and streets beautiful.</p>
-                        <a href="https://www.facebook.com/share/p/1DF4X1BHmC/" target="_blank" rel="noopener noreferrer" class="highlight-link">View Event Photos on Facebook &rarr;</a>
+                        <a href="https://www.facebook.com/share/p/1DF4X1BHmC/" target="_blank" rel="noopener noreferrer" class="highlight-link">View Event Photos on Facebook →</a>
                     </div>
                 </div>
 
@@ -571,7 +600,7 @@
 
     <div id="contactModal" class="modal-overlay">
         <div class="modal-content">
-            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <button class="close-modal" aria-label="Close modal">×</button>
             <h2 class="modal-title">Request a Free Quote</h2>
             <p class="modal-subtitle">Fill out the form below and we will get back to you shortly.</p>
             
@@ -651,7 +680,7 @@
     </div>
 
     <div id="lightboxModal" class="modal-overlay" onclick="closeLightbox(event)">
-        <span class="close-modal" onclick="closeLightbox(event)">&times;</span>
+        <span class="close-modal" onclick="closeLightbox(event)">×</span>
         <img class="lightbox-content" id="lightboxImage" alt="Expanded project view">
     </div>
 
