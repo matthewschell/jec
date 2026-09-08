@@ -57,7 +57,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         from: 'Website Lead <website@jecgroup.ca>', 
-        to: ['office@jecgroup.ca'], // Remember to update this to the office email for production!
+        to: ['office@jecgroup.ca'], 
         reply_to: email, 
         
         // DYNAMIC SUBJECT LINE: Guarantees emails won't thread together
